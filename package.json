@@ -1,5 +1,5 @@
 {
-    "name": "vite-react-ts-pwa",
+    "name": "thesystem",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -7,8 +7,6 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "build:pwa": "vite build && npm run generate:pwa-assets",
-        "preview:pwa": "vite preview --port 5173",
         "generate:pwa-assets": "pwa-assets-generator"
     },
     "dependencies": {

@@ -7,7 +7,6 @@ function App() {
     useEffect(() => {
         // Watch system dark mode preferences
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
         const handleDarkModeChange = (e: MediaQueryListEvent | MediaQueryList) => {
             if (e.matches) {
                 document.documentElement.classList.add('dark');
@@ -15,30 +14,24 @@ function App() {
                 document.documentElement.classList.remove('dark');
             }
         };
-
         // Initial check
         handleDarkModeChange(mediaQuery);
-
         // Listen for changes
         mediaQuery.addEventListener('change', handleDarkModeChange);
-
         // Check if already installed
         if (window.matchMedia('(display-mode: standalone)').matches) {
             setIsInstalled(true);
         }
-
         // Handle install prompt
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             setDeferredPrompt(e);
         });
-
         // Watch for successful installation
         window.addEventListener('appinstalled', () => {
             setIsInstalled(true);
             setDeferredPrompt(null);
         });
-
         return () => mediaQuery.removeEventListener('change', handleDarkModeChange);
     }, []);
 
@@ -58,13 +51,13 @@ function App() {
                     <div className="max-w-md mx-auto">
                         <div className="divide-y divide-gray-200">
                             <div className="py-8 text-base leading-6 space-y-4 sm:text-lg sm:leading-7 text-gray-700 dark:text-gray-300">
-                                <p>Vite + React + TypeScript + Tailwind + PWA</p>
+                                <p>TheSystem</p>
                                 {!isInstalled && deferredPrompt && (
                                     <button
                                         onClick={handleInstallClick}
                                         className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
                                     >
-                                        Install App
+                                        Nainstalovat aplikaci lokálně
                                     </button>
                                 )}
                             </div>

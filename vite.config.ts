@@ -10,6 +10,8 @@ export default defineConfig({
             devOptions: {
                 enabled: true
             },
+            injectRegister: 'auto',
+            strategies: 'generateSW',
             workbox: {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif,webp}'],
                 runtimeCaching: [
@@ -57,8 +59,8 @@ export default defineConfig({
             },
             includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
             manifest: {
-                name: 'Vite React PWA',
-                short_name: 'React PWA',
+                name: 'TheSystem',
+                short_name: 'TheSystem',
                 theme_color: '#ffffff',
                 icons: [
                     {
